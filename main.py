@@ -13,14 +13,9 @@ class Question(BaseModel):
 load_dotenv()
 app = FastAPI()
 
-origins = [
-  "https://fisiqai-ucsur.vercel.app/",
-  "fisiqai-ucsur.vercel.app",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"]
